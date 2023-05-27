@@ -33,12 +33,13 @@ html {
 }
 
 body {
-     color: #666666;
+    
      font-size: 14px;
       font-family: poppins;
      line-height: 1.80857;
      font-weight: normal;
      overflow-x: hidden;
+     
 }
 
 a {
@@ -573,4 +574,34 @@ ul.top_icon li a {
      position: inherit;
      display: inline-block;
      vertical-align: middle;
+     
 }
+
+.vertical-menu {
+     width: 400px; /* Set a width if you like */
+     text-align: center;
+     position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('background.jpg')no-repeat;
+   }
+   
+   .vertical-menu a {
+     background-color: #eee; /* Grey background color */
+     color: black; /* Black text color */
+     display:block; /* Make the links appear below each other */
+     margin-top: 7px;
+     padding: 18px; /* Add some padding */
+     text-decoration: none; /* Remove underline from links */
+   }
+   
+   .vertical-menu a:hover {
+     background-color: #ccc; /* Dark grey background on mouse-over */
+   }
+
+
+   .body-btm{
+    
+   }
+   
