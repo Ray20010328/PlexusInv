@@ -409,7 +409,7 @@ ul.top_icon li a {
 }
 
 .menu-area-main li.active a {
-     color: #efebeb;
+     color: #feaaaa;
 }
 
 .right_cart_section {
@@ -584,7 +584,7 @@ ul.top_icon li a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url('background.jpg')no-repeat;
+
    }
    
    .vertical-menu a {
