@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asset Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+            margin-top: 0;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select,
+        textarea,
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        .scan-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .scan-button img {
+            height: 24px;
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .note {
+            color: #777;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Asset Registration</h1>
+
+        <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+            <label for="asset_type">Asset Type:</label>
+            <select id="asset_type" name="asset_type" onchange="updateAssetModels()" required>
+                <option value="">-- Select Type --</option>
+                <option value="Laptop">Laptop</option>
+                <option value="PC">PC</option>
+                <option value="Label Printer">Label Printer</option>
+                <option value="Printer">Printer</option>
+                <option value="Keyboard">Keyboard</option>
+                <option value="Mouse">Mouse</option>
+            </select>
+            <span id="asset_type_error" class="error"></span>
+
+            <label for="asset_model">Asset Model:</label>
+            <select id="asset_model" name="asset_model" required>
+                <option value="">-- Select Model --</option>
+            </select>
+            <span id="asset_model_error" class="error"></span>
+
+            <label for="asset_description">Asset Description:</label>
+            <textarea id="asset_description" name="asset_description" required></textarea>
+            <span id="asset_description_error" class="error"></span>
+
+            <label for="asset_quantity">Quantity:</label>
+            <input type="number" id="asset_quantity" name="asset_quantity" min="1" required>
+            <span id="asset_quantity_error" class="error"></span>
+
+            <label for="asset_location">Location:</label>
+            <input type="text" id="asset_location" name="asset_location" required>
+            <span id="asset_location_error" class="error"></span>
+
+            <label for="receive_date">Receive Date:</label>
+            <input type="date" id="receive_date" name="receive_date" required>
+            <span id="receive_date_error" class="error"></span>
+
+            <label for="warranty_date">Warranty Date:</label>
+            <input type="date" id="warranty_date" name="warranty_date" required>
+            <span id="warranty_date_error" class="error"></span>
+
+            <label for="serial_number">Serial Number:</label>
+            <input type="text" id="serial_number" name="serial_number" required>
+            <span id="serial_number_error" class="error"></span>
+
+            <div class="scan-button">
+                <img src="scanner.png" alt="Scan Barcode">
+                <button type="button" onclick="scanBarcode()">Scan Barcode</button>
+            </div>
+            <input type="hidden" id="barcode_value" name="barcode_value">
+
+            <button type="submit">Register</button>
+        </form>
+        <p class="note">Note: Please fill out all the required fields.</p>
+    </div>
+
+    <script>
+        // JavaScript code here...
+    </script>
+</body>
+</html>
