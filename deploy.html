@@ -17,7 +17,48 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
-   
+    <style>
+       
+        select,
+        textarea,
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            width: 20%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+            margin: 10px;
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        
+
+        
+    </style> 
   
 </head>
 <body> 
@@ -62,6 +103,53 @@
         </div>
         <!-- end header -->
     </header>
+<div class="div-1">
+    
+    <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+        
+
+        <label for="sname">Staff Name:</label>
+        <input type="text" id="sname" name="sname" required>
+        <span id="sname_error" class="error"></span>
+
+        <label for="deploy_date">Deploy Date:</label>
+        <input type="date" id="deploy_date" name="deploy_date" required>
+        <span id="deploy_date_error" class="error"></span>
+
+        <label for="site">Site:</label>
+        <input type="text" id="site" name="site" required>
+        <span id="site_error" class="error"></span>
+
+        <label for="Receive">Receive:</label>
+        <input type="text" id="Receive" name="Receive" required>
+        <span id="Receive_error" class="error"></span>
+
+        <label for="Deploy">Deploy:</label>
+        <input type="text" id="Deploy" name="Deploy" required>
+        <span id="Deploy_error" class="error"></span>
+
+        <label for="uname">User Name:</label>
+        <input type="text" id="uname" name="uname" required>
+        <span id="uname_error" class="error"></span>
+
+        <label for="Item">Item:</label>
+        <input type="text" id="Item" name="Item" required>
+        <span id="Item" class="error"></span>
+
+        <label for="item_quantity">Quantity:</label>
+            <input type="number" id="item_quantity" name="item_quantity" min="1" required>
+            <span id="item_quantity_error" class="error"></span>
+
+       
+
+        <button type="submit">Submit</button>
+
+        <button type="Cancel">Cancel</button>
+    </form>
+      </div>
+ 
+
+
  
     
    
