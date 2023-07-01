@@ -24,7 +24,43 @@
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
     <!-- Login Page css -->
     <link rel="stylesheet" href="css/loginPage.css">
-   
+  
+    <div class="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="main.html"><img src="images/plexusimage.png" alt="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu"> 
+                                <ul class="menu-area-main">
+                                    <!--class = active to change to active page-->
+                                    <li class="active"> <a href="register.html">Register Asset</a> </li>
+                                    <li > <a href="Deploy.html">Deploy</a> </li>
+                                    <li><a href="Receive.html">Receive</a></li>
+                                    <li><a href="ViewRecord.html">View Record</a></li>
+                                    <li><a href="Alert.html">Alert</a></li>
+                                    <li class="last">
+                                        <a href="login.html">Login</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
   
 </head>
     <head>
@@ -37,7 +73,7 @@
             padding: 0;
         }
 
-        .container {
+        .containeraa {
             max-width: 500px;
             margin: 0 auto;
             padding: 40px;
@@ -118,6 +154,8 @@
             margin-bottom: 20px;
         }
     </style>
+
+
 
 </head>
 <body>
@@ -226,7 +264,7 @@
             return true;
         }
     </script>
-    <div class="container">
+    <div class="containeraa">
         <h1>Asset Registration</h1>
 
         <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
