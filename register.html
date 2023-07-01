@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Plexus Inventory</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Login Page css -->
+    <link rel="stylesheet" href="css/loginPage.css">
+   
+  
+</head>
+    <head>
     <title>Asset Registration</title>
     <style>
         body {
@@ -91,27 +118,172 @@
             margin-bottom: 20px;
         }
     </style>
+
 </head>
 <body>
+    
+    <script>
+        function updateAssetModels() {
+            var assetCategory = document.getElementById("asset_Category").value;
+            var assetModelSelect = document.getElementById("asset_model");
+
+            assetModelSelect.innerHTML = "";
+            if (assetCategory === "Lable Printer") {
+                var labelPrinterOptions = [
+                    "Zebra ZT 230",
+                    "Zebra ZT 411",
+                    "Zebra ZT 510",
+                    "Zebra ZT 610",
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < labelPrinterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = labelPrinterOptions[i];
+                    option.value = labelPrinterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Office Printer") {
+                var officePrinterOptions = [
+                "HP Laser Jet Pro P1102",
+                    "HP Laser Jet Pro MFP M428",
+                    "HP Laser Jet Pro MFP M528",
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < officePrinterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = officePrinterOptions[i];
+                    option.value = officePrinterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            
+            if (assetCategory === "Monitor") {
+                var monitorOptions = [
+                    "HP P22 G5",
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < monitorOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = monitorOptions[i];
+                    option.value = monitorOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+ 
+            if (assetCategory === "SSD") {
+                var SSDOptions = [
+                    "SATA 2.5' 240GB",
+                    "M.2 SATA' 240GB",
+                    "Other",
+
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < SSDOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = SSDOptions[i];
+                    option.value = SSDOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "HDMI Cable") {
+                var HDMICableOptions = [
+                    "HDMI Cable 1.5m",
+                    "HDMI Cable 3m",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HDMICableOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HDMICableOptions[i];
+                    option.value = HDMICableOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "VGA Converter") {
+                var VGAConverterOptions = [
+                    "HDMI to VGA",
+                    "VGA to HDMI",
+                    "HDMI to Display Converter",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < VGAConverterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = VGAConverterOptions[i];
+                    option.value = VGAConverterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Laptop Battery") {
+                var laptopBatteryOptions = [
+                    "HP Probook 640 G2 Battery",
+                    "HP Probook 640 G4 Battery",
+                    "HP Probook 640 G5 Battery",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < laptopBatteryOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = laptopBatteryOptions[i];
+                    option.value = laptopBatteryOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+        }
+            
+
+        function validateForm() {
+            // Validation code goes here
+            // ...
+
+            return true; // Return true for demonstration purposes
+        }
+    </script>
     <div class="container">
         <h1>Asset Registration</h1>
 
         <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
-            <label for="asset_type">Asset Type:</label>
-            <select id="asset_type" name="asset_type" onchange="updateAssetModels()" required>
-                <option value="">-- Select Type --</option>
-                <option value="Laptop">Laptop</option>
-                <option value="PC">PC</option>
-                <option value="Label Printer">Label Printer</option>
-                <option value="Printer">Printer</option>
-                <option value="Keyboard">Keyboard</option>
-                <option value="Mouse">Mouse</option>
-            </select>
-            <span id="asset_type_error" class="error"></span>
+            <label for="serial_number">Serial Number:</label>
+            <input type="text" id="serial_number" name="serial_number" required>
+            <span id="serial_number_error" class="error"></span>
 
-            <label for="asset_model">Asset Model:</label>
+            <label for="asset_Category">Asset Category:</label>
+            <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
+                <option value="">-- Select Category --</option>
+                <option value="Lable Printer">Lable Printer</option>
+                <option value="Office Printer">Office Printer</option>
+                <option value="2D Scanner">2D Scanner</option>
+                <option value="3D Scanner">3D Scanner</option>
+                <option value="Monitor">Monitor</option>
+                <option value="SSD">SSD</option>
+                <option value="HDMI Cable">HDMI Cable</option>
+                <option value="VGA Cable">VGA Cable</option>
+                <option value="VGA Converter">VGA Converter</option>
+                <option value="Laptop Battery">Laptop Battery</option>
+                <option value="Keyboard & Mouse">Keyboard & Mouse</option>
+
+            </select>
+            <span id="asset_category_error" class="error"></span>
+
+            <label for="asset_model">Brand:</label>
             <select id="asset_model" name="asset_model" required>
-                <option value="">-- Select Model --</option>
+                <option value="">-- Select Brand --</option>
             </select>
             <span id="asset_model_error" class="error"></span>
 
@@ -120,11 +292,22 @@
             <span id="asset_description_error" class="error"></span>
 
             <label for="asset_quantity">Quantity:</label>
-            <input type="number" id="asset_quantity" name="asset_quantity" min="1" required>
+            <input type="number" id="asset_quantity" name="asset_quantity" min="1" max="1" required>
             <span id="asset_quantity_error" class="error"></span>
 
-            <label for="asset_location">Location:</label>
-            <input type="text" id="asset_location" name="asset_location" required>
+            <label for="asset_location">asset_location:</label>
+            <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
+                <option value="">-- Select Location --</option>
+                <option value="RIV">Riverside</option>
+                <option value="RVE">Riverside East</option>
+                <option value="ISL">Island View</option>
+                <option value="HIL">Hillside</option>
+                <option value="ATC">ATC</option>
+
+
+
+                
+            </select>
             <span id="asset_location_error" class="error"></span>
 
             <label for="receive_date">Receive Date:</label>
@@ -135,9 +318,7 @@
             <input type="date" id="warranty_date" name="warranty_date" required>
             <span id="warranty_date_error" class="error"></span>
 
-            <label for="serial_number">Serial Number:</label>
-            <input type="text" id="serial_number" name="serial_number" required>
-            <span id="serial_number_error" class="error"></span>
+         
 
             <div class="scan-button">
                 <img src="scanner.png" alt="Scan Barcode">
@@ -150,8 +331,6 @@
         <p class="note">Note: Please fill out all the required fields.</p>
     </div>
 
-    <script>
-        // JavaScript code here...
-    </script>
+  
 </body>
 </html>
