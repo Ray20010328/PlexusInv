@@ -232,6 +232,8 @@
                 var monitorOptions = [
                     "HP P22 G5",
                     "HP P24 G5",
+                    "HP P27 G5",
+
                     "Other",
 
                 ];
@@ -241,6 +243,144 @@
                     var option = document.createElement("option");
                     option.text = monitorOptions[i];
                     option.value = monitorOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Harddisk") {
+                var HarddiskOptions = [
+                    "2.5 Sata Disk",
+                    "3.5 Sata Disk",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HarddiskOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HarddiskOptions[i];
+                    option.value = HarddiskOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "SSD") {
+                var SSDOptions = [
+                    "SATA 2.5' 240GB",
+                    "M.2 SATA' 240GB",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < SSDOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = SSDOptions[i];
+                    option.value = SSDOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "RAM") {
+                var RAMOptions = [
+                    "8GB DDR4 Laptop RAM",
+                    "8GB DDR4 Desktop RAM",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < RAMOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = RAMOptions[i];
+                    option.value = RAMOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "HDMI Cable") {
+                var HDMICableOptions = [
+                    "HDMI Cable 1.5m",
+                    "HDMI Cable 3m",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HDMICableOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HDMICableOptions[i];
+                    option.value = HDMICableOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "VGA Converter") {
+                var VGAConverterOptions = [
+                    "HDMI to VGA",
+                    "VGA to HDMI",
+                    "HDMI to Display Converter",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < VGAConverterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = VGAConverterOptions[i];
+                    option.value = VGAConverterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "Thin Client") {
+                var ThinClientOptions = [
+                    "RX 300 Thinclient",
+                    "Thinclient Adapter",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < ThinClientOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = ThinClientOptions[i];
+                    option.value = ThinClientOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Laptop Battery") {
+                var laptopBatteryOptions = [
+                    "HP Probook 640 G2 Battery",
+                    "HP Probook 640 G4 Battery",
+                    "HP Probook 640 G5 Battery",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < laptopBatteryOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = laptopBatteryOptions[i];
+                    option.value = laptopBatteryOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "KNM") {
+                var KNMOptions = [
+                    "USB Keyboard",
+                    "USB Mouse",
+                    "Bluetooth Keyboard",
+                    "Bluetooth Mouse",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < KNMOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = KNMOptions[i];
+                    option.value = KNMOptions[i];
                     assetModelSelect.appendChild(option);
                 }
             }
@@ -280,6 +420,7 @@
                 <option value="2D Scanner">2D Scanner</option>
                 <option value="3D Scanner">3D Scanner</option>
                 <option value="Monitor">Monitor</option>
+                <option value="Harddisk">Hard disk</option>
                 <option value="SSD">SSD</option>
                 <option value="RAM">RAM</option>
                 <option value="HDMI Cable">HDMI Cable</option>
@@ -287,7 +428,7 @@
                 <option value="VGA Converter">VGA Converter</option>
                 <option value="Thin Client">Thin Client</option>
                 <option value="Laptop Battery">Laptop Battery</option>
-                <option value="Keyboard & Mouse">Keyboard & Mouse</option>
+                <option value="KNM">Keyboard & Mouse</option>
 
             </select>
             <span id="asset_category_error" class="error"></span>
@@ -306,7 +447,7 @@
             <input type="number" id="asset_quantity" name="asset_quantity" min="1" max="1" required>
             <span id="asset_quantity_error" class="error"></span>
 
-            <label for="asset_location">asset_location:</label>
+            <label for="asset_location">Asset Location:</label>
             <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
                 <option value="">-- Select Location --</option>
                 <option value="RIV">Riverside</option>
