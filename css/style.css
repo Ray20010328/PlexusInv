@@ -611,8 +611,24 @@ ul.top_icon li a {
      
  }
 
- .fname{
-     padding: 20px;
-     margin: 20px;
- }
+ 
    
+
+
+
+ label{
+     display:block;
+     margin-top: 70px;
+
+ }
+ .buttoncon{
+     display: flex;
+     margin-top: 100px;
+     margin-left: 40px;
+   
+ }
+
+ input{
+     
+ }
+
