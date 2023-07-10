@@ -193,82 +193,147 @@
             var assetModelSelect = document.getElementById("asset_model");
 
             assetModelSelect.innerHTML = "";
-            if (assetCategory === "Lable Printer") {
-                var labelPrinterOptions = [
-                    "Zebra ZT 411",
-                    "Zebra ZT 510",
-                    "Zebra ZT 610",
-                    "Other"
-                ];
-
-                // Add options to the "Brand" dropdown
-                for (var i = 0; i < labelPrinterOptions.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = labelPrinterOptions[i];
-                    option.value = labelPrinterOptions[i];
-                    assetModelSelect.appendChild(option);
-                }
-            }
-
-            if (assetCategory === "Office Printer") {
-                var officePrinterOptions = [
-                    "HP Laser Jet P3015",
-                    "HP laserjetmanaged e50145dn",
-                    "HP Laser Managed MFP E72525",
-                    "HP Laser Jet Pro MFP M528",
-                    "Other"
-                ];
-
-                // Add options to the "Brand" dropdown
-                for (var i = 0; i < officePrinterOptions.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = officePrinterOptions[i];
-                    option.value = officePrinterOptions[i];
-                    assetModelSelect.appendChild(option);
-                }
-            }
-            
-            if (assetCategory === "Monitor") {
-                var monitorOptions = [
-                    "HP P22 G5",
-                    "HP P24 G5",
-                    "HP P27 G5",
-
-                    "Other",
-
-                ];
-
-                // Add options to the "Brand" dropdown
-                for (var i = 0; i < monitorOptions.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = monitorOptions[i];
-                    option.value = monitorOptions[i];
-                    assetModelSelect.appendChild(option);
-                }
-            }
-
-
-            
-   
-            
-            if (assetCategory === "Thin Client") {
-                var ThinClientOptions = [
-                    "Ncomputing RX 300",
-                    "Ncomputing N 500",
-                    "Other",
-
-                ];
-
-                // Add options to the "Brand" dropdown
-                for (var i = 0; i < ThinClientOptions.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = ThinClientOptions[i];
-                    option.value = ThinClientOptions[i];
-                    assetModelSelect.appendChild(option);
-                }
-            }
-
            
+
+            if (assetCategory === "Harddisk") {
+                var HarddiskOptions = [
+                    "Western Digital WD10EZEX 3.5 Sata Disk 240GB",
+                    "Western Digital WD10EZEX 3.5 Sata Disk 500GB",
+                    "Western Digital WD10EZEX 3.5 Sata Disk 1TB",
+                    "Western Digital WD3200AVVS 3.5 Sata Disk 240GB",
+                    "Western Digital WD3200AVVS 3.5 Sata Disk 240GB",
+                    "Western Digital WD3200AVVS 3.5 Sata Disk 240GB",
+
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HarddiskOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HarddiskOptions[i];
+                    option.value = HarddiskOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "SSD") {
+                var SSDOptions = [
+                "Kingston A400 2.5 Sata Disk 240GB",
+                "Kingston SA400M8 240GB",
+                "Kingston SA400M8 480GB",
+                "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < SSDOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = SSDOptions[i];
+                    option.value = SSDOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "RAM") {
+                var RAMOptions = [
+                    "Apacer DDR3L-1600 4GB",
+                    "Apacer DDR3L-1600 8GB",
+                    
+                    "HP DDR 3200 Memory 8GB",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < RAMOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = RAMOptions[i];
+                    option.value = RAMOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "HDMI Cable") {
+                var HDMICableOptions = [
+                    "UGREEN HDMI Cable 1.5m",
+                    "UGREEN HDMI Cable 3m",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HDMICableOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HDMICableOptions[i];
+                    option.value = HDMICableOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "VGA Converter") {
+                var VGAConverterOptions = [
+                    "HP HDMI to VGA",
+                    "HP USB-C to USB 3.0 Cable",
+
+                    "VGA to HDMI",
+                    "HDMI to Display Converter",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < VGAConverterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = VGAConverterOptions[i];
+                    option.value = VGAConverterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+          
+
+            if (assetCategory === "Laptop Battery") {
+                var laptopBatteryOptions = [
+                    "HP Probook 640 G2 Battery",
+                    "HP Probook 640 G4 Battery",
+                    "HP Probook 640 G5 Battery",
+                    "HP Probook 440 G8 Battery",
+                    "HP Probook 440 G9 Battery",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < laptopBatteryOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = laptopBatteryOptions[i];
+                    option.value = laptopBatteryOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "KNM") {
+                var KNMOptions = [
+                    "HP 125 Wired Mouse",
+                    "HP 320M Wired Mouse",
+                    "HP Z5000 Traveled Mouse",
+                    "HP 6SP30AA Bluetooth Mouse",
+                    "HP 435 Wireless Mouse",
+                    "HP Wired Desktop 320K Keyboard",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < KNMOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = KNMOptions[i];
+                    option.value = KNMOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
 
             if (assetCategory === "Other") {
                 assetModelSelect.innerHTML = '<option value="">-- Select Brand --</option>';
@@ -293,20 +358,22 @@
         <h1>Asset Registration</h1>
 
         <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
-            <label for="serial_number">Serial Number:</label>
-            <input type="text" id="serial_number" name="serial_number" required>
-            <span id="serial_number_error" class="error"></span>
+            <label for="po_number">PO Number:</label>
+            <input type="text" id="po_number" name="po_number" required>
+            <span id="po_number_error" class="error"></span>
 
             <label for="asset_Category">Asset Category:</label>
             <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
                 <option value="">-- Select Category --</option>
-                <option value="Lable Printer">Label Printer</option>
-                <option value="Office Printer">Office Printer</option>
-                <option value="2D Scanner">2D Scanner</option>
-                <option value="3D Scanner">3D Scanner</option>
-                <option value="Monitor">Monitor</option>               
-                <option value="Thin Client">Thin Client</option>
-            
+               
+                <option value="Harddisk">Hard disk</option>
+                <option value="SSD">SSD</option>
+                <option value="RAM">RAM</option>
+                <option value="HDMI Cable">HDMI Cable</option>
+                <option value="VGA Cable">VGA Cable</option>
+                <option value="VGA Converter">VGA Converter</option>
+                <option value="Laptop Battery">Laptop Battery</option>
+                <option value="KNM">Keyboard & Mouse</option>
 
             </select>
             <span id="asset_category_error" class="error"></span>
@@ -322,7 +389,7 @@
             <span id="asset_description_error" class="error"></span>
 
             <label for="asset_quantity">Quantity:</label>
-            <input type="number" id="asset_quantity" name="asset_quantity" min="1" max="1" required>
+            <input type="number" id="asset_quantity" name="asset_quantity" min="1" max="" required>
             <span id="asset_quantity_error" class="error"></span>
 
             <label for="asset_location">Asset Location:</label>
@@ -333,7 +400,6 @@
                 <option value="ISL">Island View</option>
                 <option value="HIL">Hillside</option>
                 <option value="ATC">Seaside</option>
-
 
 
 
