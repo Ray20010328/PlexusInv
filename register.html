@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Plexus Inventory</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Login Page css -->
+    <link rel="stylesheet" href="css/loginPage.css">
+  
+    <div class="header">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="main.html"><img src="images/plexusimage.png" alt="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu"> 
+                                <ul class="menu-area-main">
+                                    <!--class = active to change to active page-->
+                                    <li class="active"> <a href="register.html">Register Asset</a> </li>
+                                    <li > <a href="Deploy.html">Deploy</a> </li>
+                                    <li><a href="Receive.html">Receive</a></li>
+                                    <li><a href="ViewRecord.html">View Record</a></li>
+                                    <li><a href="Alert.html">Alert</a></li>
+                                    <li class="last">
+                                        <a href="login.html">Login</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+  
+</head>
+    <head>
+    <title>Asset Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .containeraa {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+            margin-top: 0;
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select,
+        textarea,
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        .scan-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .scan-button img {
+            height: 24px;
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .note {
+            color: #777;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Plexus Inventory</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Login Page css -->
+    <link rel="stylesheet" href="css/loginPage.css">
+   
+  
+</head>
+<body>
+    
+    <script>
+        function updateAssetModels() {
+            var assetCategory = document.getElementById("asset_Category").value;
+            var assetModelSelect = document.getElementById("asset_model");
+
+            assetModelSelect.innerHTML = "";
+            if (assetCategory === "Lable Printer") {
+                var labelPrinterOptions = [
+                    "Zebra ZT 230",
+                    "Zebra ZT 411",
+                    "Zebra ZT 510",
+                    "Zebra ZT 610",
+                    "Other"
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < labelPrinterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = labelPrinterOptions[i];
+                    option.value = labelPrinterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Office Printer") {
+                var officePrinterOptions = [
+                    "HP Laser Jet Pro P1102",
+                    "HP Laser Jet Pro MFP M428",
+                    "HP Laser Jet Pro MFP M528",
+                    "Other"
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < officePrinterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = officePrinterOptions[i];
+                    option.value = officePrinterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            
+            if (assetCategory === "Monitor") {
+                var monitorOptions = [
+                    "HP P22 G5",
+                    "HP P24 G5",
+                    "HP P27 G5",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < monitorOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = monitorOptions[i];
+                    option.value = monitorOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Harddisk") {
+                var HarddiskOptions = [
+                    "2.5 Sata Disk",
+                    "3.5 Sata Disk",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HarddiskOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HarddiskOptions[i];
+                    option.value = HarddiskOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "SSD") {
+                var SSDOptions = [
+                    "SATA 2.5' 240GB",
+                    "M.2 SATA' 240GB",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < SSDOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = SSDOptions[i];
+                    option.value = SSDOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "RAM") {
+                var RAMOptions = [
+                    "8GB DDR4 Laptop RAM",
+                    "8GB DDR4 Desktop RAM",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < RAMOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = RAMOptions[i];
+                    option.value = RAMOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "HDMI Cable") {
+                var HDMICableOptions = [
+                    "HDMI Cable 1.5m",
+                    "HDMI Cable 3m",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < HDMICableOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = HDMICableOptions[i];
+                    option.value = HDMICableOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "VGA Converter") {
+                var VGAConverterOptions = [
+                    "HDMI to VGA",
+                    "VGA to HDMI",
+                    "HDMI to Display Converter",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < VGAConverterOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = VGAConverterOptions[i];
+                    option.value = VGAConverterOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "Thin Client") {
+                var ThinClientOptions = [
+                    "RX 300 Thinclient",
+                    "Thinclient Adapter",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < ThinClientOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = ThinClientOptions[i];
+                    option.value = ThinClientOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Laptop Battery") {
+                var laptopBatteryOptions = [
+                    "HP Probook 640 G2 Battery",
+                    "HP Probook 640 G4 Battery",
+                    "HP Probook 640 G5 Battery",
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < laptopBatteryOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = laptopBatteryOptions[i];
+                    option.value = laptopBatteryOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+            if (assetCategory === "KNM") {
+                var KNMOptions = [
+                    "USB Keyboard",
+                    "USB Mouse",
+                    "Bluetooth Keyboard",
+                    "Bluetooth Mouse",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < KNMOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = KNMOptions[i];
+                    option.value = KNMOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
+            if (assetCategory === "Other") {
+                assetModelSelect.innerHTML = '<option value="">-- Select Brand --</option>';
+            }
+        }
+            
+
+        function validateForm() {
+            var brandSelect = document.getElementById("asset_model");
+            var descriptionInput = document.getElementById("asset_description");
+
+            if (brandSelect.value === "Other" && descriptionInput.value.trim() === "") {
+                alert("Please provide a description for the selected brand.");
+                descriptionInput.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <div class="containeraa">
+        <h1>Asset Registration</h1>
+
+        <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+            <label for="serial_number">Serial Number:</label>
+            <input type="text" id="serial_number" name="serial_number" required>
+            <span id="serial_number_error" class="error"></span>
+
+            <label for="asset_Category">Asset Category:</label>
+            <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
+                <option value="">-- Select Category --</option>
+                <option value="Lable Printer">Lable Printer</option>
+                <option value="Office Printer">Office Printer</option>
+                <option value="2D Scanner">2D Scanner</option>
+                <option value="3D Scanner">3D Scanner</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Harddisk">Hard disk</option>
+                <option value="SSD">SSD</option>
+                <option value="RAM">RAM</option>
+                <option value="HDMI Cable">HDMI Cable</option>
+                <option value="VGA Cable">VGA Cable</option>
+                <option value="VGA Converter">VGA Converter</option>
+                <option value="Thin Client">Thin Client</option>
+                <option value="Laptop Battery">Laptop Battery</option>
+                <option value="KNM">Keyboard & Mouse</option>
+
+            </select>
+            <span id="asset_category_error" class="error"></span>
+
+            <label for="asset_model">Brand:</label>
+            <select id="asset_model" name="asset_model" required>
+                <option value="">-- Select Brand --</option>
+            </select>
+            <span id="asset_model_error" class="error"></span>
+
+            <label for="asset_description">Asset Description:</label>
+            <textarea id="asset_description" name="asset_description"></textarea>
+            <span id="asset_description_error" class="error"></span>
+
+            <label for="asset_quantity">Quantity:</label>
+            <input type="number" id="asset_quantity" name="asset_quantity" min="1" max="1" required>
+            <span id="asset_quantity_error" class="error"></span>
+
+            <label for="asset_location">Asset Location:</label>
+            <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
+                <option value="">-- Select Location --</option>
+                <option value="RIV">Riverside</option>
+                <option value="RVE">Riverside East</option>
+                <option value="ISL">Island View</option>
+                <option value="HIL">Hillside</option>
+                <option value="ATC">ATC</option>
+
+
+
+                
+            </select>
+            <span id="asset_location_error" class="error"></span>
+
+            <label for="receive_date">Receive Date:</label>
+            <input type="date" id="receive_date" name="receive_date" required>
+            <span id="receive_date_error" class="error"></span>
+
+            <label for="warranty_date">Warranty Date:</label>
+            <input type="date" id="warranty_date" name="warranty_date" required>
+            <span id="warranty_date_error" class="error"></span>
+
+         
+
+            <div class="scan-button">
+                <img src="scanner.png" alt="Scan Barcode">
+                <button type="button" onclick="scanBarcode()">Scan Barcode</button>
+            </div>
+            <input type="hidden" id="barcode_value" name="barcode_value">
+
+            <button type="submit">Register</button>
+        </form>
+        <p class="note">Note: Please fill out all the required fields.</p>
+    </div>
+
+  
+</body>
+</html>

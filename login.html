@@ -23,10 +23,12 @@
     <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Login Page css -->
+    <link rel="stylesheet" href="css/loginPage.css">
    
   
 </head>
-<body> 
+<body>
     <!-- header -->
     <header>
         <!-- header inner -->
@@ -46,17 +48,15 @@
                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                         <div class="menu-area">
                             <div class="limit-box">
-                                <nav class="main-menu"> 
+                                <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <!--class = active to change to active page-->
-                                        <li class="active"> 
-                                        <li> <a href="register.html">Register Asset</a> </li>
+                                        <li> <a href="main.html">Home</a> </li>
                                         <li> <a href="Deploy.html">Deploy</a> </li>
                                         <li><a href="Receive.html">Receive</a></li>
                                         <li><a href="ViewRecord.html">View Record</a></li>
                                         <li><a href="Alert.html">Alert</a></li>
                                         <li class="last">
-                                            <a href="login.html">Login</a>
+                                            <a href="login.html">Login / Register</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -69,15 +69,40 @@
         </div>
         <!-- end header -->
     </header>
- <body class="body-btm"><div class="vertical-menu">
-    <a href="Register.html">Register New Asset</a>
-    <a href="Register.html">Register Asset</a>
-    <a href="Deploy.html">Deploy</a>
-    <a href="Receive.html">Receive</a>
-    <a href="ViewRecord.html">View Record</a>
-    <a href="Alert.html">Alert</a>  
-</div></body>
+
+    <div class="container_login">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="login">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" placeholder="User name / Email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" placeholder="Password">
+                    </div>
+                    <button class="button login__submit">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>				
+                </form>
+                <div class="social-login">
+                    <div class="social-icons">
+                        <a href="#" class="social-login__icon fab fa-instagram"></a>
+                        <a href="#" class="social-login__icon fab fa-facebook"></a>
+                        <a href="#" class="social-login__icon fab fa-twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>		
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>		
+        </div>
+    </div>
     
-   
 </body>
 </html>

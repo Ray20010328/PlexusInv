@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Plexus Inventory</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+       
+        select,
+        textarea,
+        input[type="number"],
+        input[type="text"],
+        input[type="date"] {
+            width: 20%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+            margin: 10px;
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        
+
+        
+    </style> 
+  
+</head>
+<body> 
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo">
+                                    <a href="main.html"><img src="images/plexusimage.png" alt="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                            <div class="limit-box">
+                                <nav class="main-menu"> 
+                                    <ul class="menu-area-main">
+                                        <!--class = active to change to active page-->
+                                        <li> <a href="register.html">Register Asset</a> </li>
+                                        <li> <a href="Deploy.html">Deploy</a> </li>
+                                        <li class="active"><a href="Receive.html">Receive</a></li>
+                                        <li><a href="ViewRecord.html">View Record</a></li>
+                                        <li><a href="Alert.html">Alert</a></li>
+                                        <li class="last">
+                                            <a href="login.html">Login</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+    </header>
+<div class="div-1">
+<div  style="float: left;display:inline-block; width:33%;text-align:center;">
+    
+    <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+        
+
+        <label for="sname">Staff Name:</label>
+        <input type="text" id="sname" name="sname" required style="min-width: 200px;">
+        <span id="sname_error" class="error"></span>
+
+        <label for="deploy_date">Receive Date:</label>
+        <input type="date" id="deploy_date" name="deploy_date" required style="min-width: 200px;">
+        <span id="deploy_date_error" class="error"></span>
+
+        <label for="site">Site:</label>
+        <input type="text" id="site" name="site" required style="min-width: 200px;">
+        <span id="site_error" class="error"></span>
+
+        
+
+
+        
+    </form>
+      </div>
+
+    <div  style="float: inherit;display:inline-block; width:33%;text-align:center; ">
+        <form action="register_asset.php" method="POST" >
+            
+            <label for="Type">Type:</label>
+            <select id="Type" name="Type" style="min-width: 200px;" >
+                <option value="Deploy">Deploy</option>
+                <option value="Receive" selected>Receive</option>
+               
+              </select>
+            <span id="Receive_error" class="error"></span>
+<div class="buttoncon">
+
+    <button type="Cancel" style="background-color: #706f6f;">Cancel</button>
+
+        <button type="submit" style="margin-left: 240px; ">Submit</button>
+</div>
+            
+        </form>
+    </div>
+
+    <div  style="float: inherit;display:inline-block; width:33%;text-align:center;">
+        <form action="register_asset.php" method="POST">
+            
+        <label for="uname">User Name:</label>
+        <input type="text" id="uname" name="uname" required style="min-width: 200px;" >
+        <span id="uname_error" class="error"></span>
+
+        <label for="Item">Item:</label>
+        <input type="text" id="Item" name="Item" required style="min-width: 200px;">
+        <span id="Item" class="error"></span>
+
+        <label for="item_quantity">Quantity:</label>
+            <input type="number" id="item_quantity" name="item_quantity" min="1" required style="min-width: 200px;">
+            <span id="item_quantity_error" class="error"></span>
+
+       
+
+        
+        </form>
+    </div>
+ </div>
+
+
+ 
+    
+   
+</body>
+</html>
