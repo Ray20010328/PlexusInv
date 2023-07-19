@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<HTml:5>
+    
 
 <head>
     <!-- basic -->
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
+    <title>Receive Asset</title>
     <style>
        
         select,
@@ -104,9 +105,10 @@
         <!-- end header -->
     </header>
 <div class="div-1">
+    <form action="test.php" method="POST" onsubmit="return validateForm()">
 <div  style="float: left;display:inline-block; width:33%;text-align:center;">
     
-    <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+    
         
 
         <label for="sname">Staff Name:</label>
@@ -125,11 +127,11 @@
 
 
         
-    </form>
+    
       </div>
 
     <div  style="float: inherit;display:inline-block; width:33%;text-align:center; ">
-        <form action="register_asset.php" method="POST" >
+       
             
             <label for="Type">Type:</label>
             <select id="Type" name="Type" style="min-width: 200px;" >
@@ -145,11 +147,11 @@
         <button type="submit" style="margin-left: 240px; ">Submit</button>
 </div>
             
-        </form>
+       
     </div>
 
     <div  style="float: inherit;display:inline-block; width:33%;text-align:center;">
-        <form action="register_asset.php" method="POST">
+        
             
         <label for="uname">User Name:</label>
         <input type="text" id="uname" name="uname" required style="min-width: 200px;" >
@@ -166,13 +168,15 @@
        
 
         
-        </form>
+      
     </div>
- </div>
+    </form>
+</div>
 
 
  
     
    
 </body>
-</html>
+</HTml:5>
+

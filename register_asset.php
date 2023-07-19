@@ -1,8 +1,8 @@
 <?php
 // Establish a connection to the MySQL database
 $dbhost = 'localhost';
-$dbuser = '';
-$dbpass = '';
+$dbuser = 'ray';
+$dbpass = '123';
 $dbname = 'plexus'; // Replace with your actual database name
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
