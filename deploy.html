@@ -17,6 +17,23 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function clearForm() {
+            document.getElementById("myForm").reset();
+        }
+
+        window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+
+    if (message === 'success') {
+        alert('Data insertion was successful!');
+    } else if (message === 'failed') {
+        alert('Data insertion failed!');
+    }
+};
+        </script>
+        
     <style>
        
         select,
@@ -104,7 +121,7 @@
         <!-- end header -->
     </header>
 <div class="div-1">
-    <form action="test.php" method="POST" onsubmit="return validateForm()">
+    <form  id="myForm" action="test.php" method="POST">
 <div  style="float: left;display:inline-block; width:33%;text-align:center;">
     
     
@@ -117,7 +134,11 @@
         <label for="deploy_date">Date:</label>
         <input type="date" id="deploy_date" name="deploy_date" required style="min-width: 200px;">
         <span id="deploy_date_error" class="error"></span>
-
+        
+        <script>
+            document.getElementById('deploy_date').valueAsDate = new Date();
+        </script>
+        
         <label for="site">Site:</label>
         <input type="text" id="site" name="site" required style="min-width: 200px;">
         <span id="site_error" class="error"></span>
@@ -139,12 +160,15 @@
                
               </select>
             <span id="Receive_error" class="error"></span>
+<!-- ... Your other HTML code ... -->
+
 <div class="buttoncon">
-
-    <button type="Cancel" style="background-color: #706f6f;">Cancel</button>
-
-        <button type="submit" style="margin-left: 240px; ">Submit</button>
+    <button type="button" onclick="clearForm()" style="background-color: #706f6f;">Cancel</button>
+    <button type="submit" name="submit" style="margin-left: 240px;">Submit</button>
 </div>
+
+<!-- ... Your other HTML code ... -->
+
             
        
     </div>
@@ -158,7 +182,7 @@
 
         <label for="Item">Item:</label>
         <input type="text" id="Item" name="Item" required style="min-width: 200px;">
-        <span id="Item" class="error"></span>
+        <span id="Item_error" class="error"></span>
 
         <label for="item_quantity">Quantity:</label>
             <input type="number" id="item_quantity" name="item_quantity" min="1" required style="min-width: 200px;">
