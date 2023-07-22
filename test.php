@@ -1,5 +1,5 @@
 <?php
-echo "11111111111111111111111111";
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -10,7 +10,7 @@ echo '</pre>';
 // Check if the form is submitted
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
-    echo "2222222222222222222222";
+    
     // Get form data
     $staffName = $_POST["sname"];
     $deployDate = $_POST["deploy_date"];
@@ -28,11 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
     // Create a connection
     $conn = new mysqli($servername, $username, $password, $dbname);
-    echo "1333333333333333333333331";
+   
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-        echo "Connected ffffffffffffffff";
+       
     }
 
 
