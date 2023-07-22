@@ -49,7 +49,7 @@
         #filterInput {
             margin: 10px;
             padding: 8px;
-            width: 100%;
+            width: 97%;
             box-sizing: border-box;
         }
     </style>
@@ -108,6 +108,7 @@
             <th>User Name</th>
             <th>Item</th>
             <th>Quantity</th>
+            <th>Action</th>
         </tr>
         <?php
         // Database connection details
@@ -139,6 +140,7 @@
                 echo "<td>" . $row["user_name"] . "</td>";
                 echo "<td>" . $row["item"] . "</td>";
                 echo "<td>" . $row["item_quantity"] . "</td>";
+                echo "<td><button class=\"delete-btn\" onclick=\"deleteRecord('" . $row["id"] . "')\">Delete</button></td>";
                 echo "</tr>";
             }
         } else {
@@ -178,6 +180,50 @@
 
         // Attach event listener to the filter input
         document.getElementById("filterInput").addEventListener("keyup", filterTable);
+
+
+
+         // Delete function
+         function deleteRecord(recordId) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                // Send an AJAX request to the server to delete the record
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            // Refresh the page to update the table after successful deletion
+                            location.reload();
+                        } else {
+                            alert("Failed to delete the record.");
+                        }
+                    }
+                };
+                xhr.open("POST", "delete_record.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send("recordId=" + encodeURIComponent(recordId));
+            }
+        }
+
+
+        
     </script>
+
+
+<style>
+        /* Additional style for Delete button */
+        .delete-btn {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
 </body>
 </html>
