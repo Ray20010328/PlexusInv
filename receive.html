@@ -22,16 +22,40 @@
             document.getElementById("myForm").reset();
         }
 
-        window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const message = urlParams.get('message');
+        
 
-    if (message === 'success') {
-        alert('Data insertion was successful!');
-    } else if (message === 'failed') {
-        alert('Data insertion failed!');
-    }
-};
+
+// Function to fetch asset_model values from assetstotal table
+function fetchAssetModels() {
+            fetch('fetch_asset_models.php') // Create a new PHP file to handle the AJAX request to fetch asset models
+                .then(response => response.json())
+                .then(data => {
+                    const itemSelect = document.getElementById('Item');
+                    itemSelect.innerHTML = '';
+                    data.forEach(assetModel => {
+                        const option = document.createElement('option');
+                        option.value = assetModel.asset_model;
+                        option.textContent = assetModel.asset_model;
+                        itemSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching asset models:', error));
+        }
+
+        // Call the function on page load to populate the asset models dropdown
+        window.onload = function () {
+            fetchAssetModels();
+
+            // Your existing window.onload code
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+
+            if (message === 'success') {
+                alert('Data insertion was successful!');
+            } else if (message === 'failed') {
+                alert('Data insertion failed!');
+            }
+        };
         </script>
 
     <title>Receive Asset</title>
@@ -73,7 +97,17 @@
         button:hover {
             background-color: #c0392b;
         }
-
+        select {
+            width: 20%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+            margin: 10px;
+            margin-bottom: 15px;
+        }
         
 
         
@@ -185,8 +219,10 @@
         <span id="uname_error" class="error"></span>
 
         <label for="Item">Item:</label>
-        <input type="text" id="Item" name="Item" required style="min-width: 200px;">
-        <span id="Item" class="error"></span>
+                <select id="Item" name="Item" required style="min-width: 200px;">
+                    <!-- Asset models will be populated here -->
+                </select>
+                <span id="Item" class="error"></span>   
 
         <label for="item_quantity">Quantity:</label>
             <input type="number" id="item_quantity" name="item_quantity" min="1" required style="min-width: 200px;" value="1">
@@ -199,7 +235,7 @@
     </div>
     </form>
 </div>
-
+    
 
  
     
