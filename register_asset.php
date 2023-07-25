@@ -3,6 +3,7 @@
 $dbhost = 'localhost';
 $dbuser = 'root'; // Replace with your actual database username
 $dbpass = ''; // Replace with your actual database password
+
 $dbname = 'plexus'; // Replace with your actual database name
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);

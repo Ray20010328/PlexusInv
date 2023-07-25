@@ -3,6 +3,7 @@
 $dbhost = 'localhost';
 $dbuser = 'root'; // Replace with your actual database username
 $dbpass = ''; // Replace with your actual database password
+
 $dbname = 'plexus'; // Replace with your actual database name
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
@@ -50,6 +51,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+
+
+     // Update the assetstotal table
+     $sql = "SELECT * FROM assetstotal WHERE asset_model = '$assetModel' AND site = '$assetLocation'";
+     $result = $conn->query($sql);
+ 
+     if ($result->num_rows > 0) {
+         // Asset_model and site combination already exists, update the quantity
+         $row = $result->fetch_assoc();
+         $totalQuantity = $row['quantity'] + $assetQuantity;
+ 
+         $sql = "UPDATE assetstotal SET quantity = '$totalQuantity' WHERE asset_model = '$assetModel' AND site = '$assetLocation'";
+         if ($conn->query($sql) !== TRUE) {
+             echo "Error updating assetstotal: " . $conn->error;
+         }
+     } else {
+         // Asset_model and site combination doesn't exist, insert a new record
+         $sql = "INSERT INTO assetstotal (asset_model, quantity, site) VALUES ('$assetModel', '$assetQuantity', '$assetLocation')";
+         if ($conn->query($sql) !== TRUE) {
+             echo "Error inserting into assetstotal: " . $conn->error;
+         }
+     }
+ 
+
+
 
 // Close the database connection
 $conn->close();
