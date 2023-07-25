@@ -74,4 +74,3 @@ echo "Connected successfully";
     $conn->close();
 }
 ?>
-
