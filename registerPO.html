@@ -357,7 +357,7 @@
     <div class="containeraa">
         <h1>Asset Registration</h1>
 
-        <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+        <form action="PO.php" method="POST" onsubmit="return validateForm()">
             <label for="po_number">PO Number:</label>
             <input type="text" id="po_number" name="po_number" required>
             <span id="po_number_error" class="error"></span>
@@ -393,9 +393,9 @@
             <span id="asset_quantity_error" class="error"></span>
 
             <label for="asset_location">Asset Location:</label>
-            <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
+        <select id="asset_location" name="asset_location" onchange="updateAssetModels()" required>
                 <option value="">-- Select Location --</option>
-                <option value="RIV">Riverside/ATC</option>
+                <option value="RIV/ATC">Riverside/ATC</option>
                 <option value="RVE">Riverside East</option>
                 <option value="ISL">Island View</option>
                 <option value="HIL">Hillside</option>
