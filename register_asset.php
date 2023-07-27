@@ -40,7 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-    } else {
+        
+    } 
+
+
+    else {
         // Serial number doesn't exist, perform an insert
         $sql = "INSERT INTO assets (serial_number, asset_category, asset_model, asset_description,
                 asset_quantity, asset_location, asset_receive_date, asset_warranty_date)
@@ -48,13 +52,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 '$assetQuantity', '$assetLocation', '$assetReceiveDate', '$assetWarrantyDate')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Asset registered successfully.";
+            echo "Asset updated successfully.";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
+        
     }
 }
 
 // Close the database connection
 $conn->close();
 ?>
+
+<a href="register.html">
+  <button>Click Me</button>
+</a>
+
