@@ -228,6 +228,25 @@
                 }
             }
             
+            
+            if (assetCategory === "2D Scanner") {
+                var monitorOptions = [
+                    "MJ 2020",
+                    "1950",
+
+                    "Other",
+
+                ];
+
+                // Add options to the "Brand" dropdown
+                for (var i = 0; i < monitorOptions.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = monitorOptions[i];
+                    option.value = monitorOptions[i];
+                    assetModelSelect.appendChild(option);
+                }
+            }
+
             if (assetCategory === "Monitor") {
                 var monitorOptions = [
                     "HP P22 G5",
@@ -303,7 +322,6 @@
                 <option value="Lable Printer">Label Printer</option>
                 <option value="Office Printer">Office Printer</option>
                 <option value="2D Scanner">2D Scanner</option>
-                <option value="3D Scanner">3D Scanner</option>
                 <option value="Monitor">Monitor</option>               
                 <option value="Thin Client">Thin Client</option>
             
@@ -326,20 +344,16 @@
             <span id="asset_quantity_error" class="error"></span>
 
             <label for="asset_location">Asset Location:</label>
-            <select id="asset_Category" name="asset_Category" onchange="updateAssetModels()" required>
+            <select id="asset_location" name="asset_location" onchange="updateAssetModels()" required>
                 <option value="">-- Select Location --</option>
                 <option value="RIV">Riverside/ATC</option>
                 <option value="RVE">Riverside East</option>
                 <option value="ISL">Island View</option>
                 <option value="HIL">Hillside</option>
                 <option value="ATC">Seaside</option>
-
-
-
-
-                
             </select>
             <span id="asset_location_error" class="error"></span>
+            
 
             <label for="receive_date">Receive Date:</label>
             <input type="date" id="receive_date" name="receive_date" required>

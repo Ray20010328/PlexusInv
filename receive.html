@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<HTml:5>
+    
 
 <head>
     <!-- basic -->
@@ -17,6 +17,49 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function clearForm() {
+            document.getElementById("myForm").reset();
+        }
+
+        
+
+
+// Function to fetch asset_model values from assetstotal table
+function fetchAssetModels() {
+            fetch('fetch_asset_models.php') // Create a new PHP file to handle the AJAX request to fetch asset models
+                .then(response => response.json())
+                .then(data => {
+                    const itemSelect = document.getElementById('Item');
+                    itemSelect.innerHTML = '';
+                    data.forEach(assetModel => {
+                        const option = document.createElement('option');
+                        option.value = assetModel.asset_model;
+                        option.textContent = assetModel.asset_model;
+                        itemSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching asset models:', error));
+        }
+
+        // Call the function on page load to populate the asset models dropdown
+        window.onload = function () {
+            fetchAssetModels();
+
+            // Your existing window.onload code
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+
+            if (message === 'success') {
+                alert('Data insertion was successful!');
+            } else if (message === 'failed') {
+                alert('Data insertion failed!');
+            }
+        };
+        </script>
+
+    <title>Receive Asset</title>
+
     <style>
        
         select,
@@ -54,7 +97,17 @@
         button:hover {
             background-color: #c0392b;
         }
-
+        select {
+            width: 20%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #555;
+            font-size: 16px;
+            margin: 10px;
+            margin-bottom: 15px;
+        }
         
 
         
@@ -87,7 +140,7 @@
                                         <li> <a href="register.html">Register Asset</a> </li>
                                         <li> <a href="Deploy.html">Deploy</a> </li>
                                         <li class="active"><a href="Receive.html">Receive</a></li>
-                                        <li><a href="ViewRecord.html">View Record</a></li>
+                                        <li><a href="ViewRecord.php">View Record</a></li>
                                         <li><a href="Alert.html">Alert</a></li>
                                         <li class="last">
                                             <a href="login.html">Login</a>
@@ -104,32 +157,43 @@
         <!-- end header -->
     </header>
 <div class="div-1">
+    <form action="test.php" method="POST" onsubmit="return validateForm()">
 <div  style="float: left;display:inline-block; width:33%;text-align:center;">
     
-    <form action="register_asset.php" method="POST" onsubmit="return validateForm()">
+    
         
 
         <label for="sname">Staff Name:</label>
         <input type="text" id="sname" name="sname" required style="min-width: 200px;">
         <span id="sname_error" class="error"></span>
 
-        <label for="deploy_date">Receive Date:</label>
+        <label for="deploy_date">Date:</label>
         <input type="date" id="deploy_date" name="deploy_date" required style="min-width: 200px;">
         <span id="deploy_date_error" class="error"></span>
+        <script>
+            document.getElementById('deploy_date').valueAsDate = new Date();
+        </script>
 
         <label for="site">Site:</label>
-        <input type="text" id="site" name="site" required style="min-width: 200px;">
+        <select  id="site" name="site" required style="min-width: 200px;">
+            <option value="RIV/ATC">RIV/ATC</option>
+            <option value="HIL" selected>HIL</option>
+            <option value="SEA">SEA</option>
+            <option value="RVE">RVE</option>
+            <option value="ISL">ISL</option>
+
+        </select>
         <span id="site_error" class="error"></span>
 
         
 
 
         
-    </form>
+    
       </div>
 
     <div  style="float: inherit;display:inline-block; width:33%;text-align:center; ">
-        <form action="register_asset.php" method="POST" >
+       
             
             <label for="Type">Type:</label>
             <select id="Type" name="Type" style="min-width: 200px;" >
@@ -138,41 +202,42 @@
                
               </select>
             <span id="Receive_error" class="error"></span>
-<div class="buttoncon">
-
-    <button type="Cancel" style="background-color: #706f6f;">Cancel</button>
-
-        <button type="submit" style="margin-left: 240px; ">Submit</button>
-</div>
+            <div class="buttoncon">
+                <button type="button" onclick="clearForm()" style="background-color: #706f6f;">Cancel</button>
+                <button type="submit" name="submit" style="margin-left: 240px;">Submit</button>
+            </div>
             
-        </form>
+       
     </div>
 
     <div  style="float: inherit;display:inline-block; width:33%;text-align:center;">
-        <form action="register_asset.php" method="POST">
+        
             
         <label for="uname">User Name:</label>
         <input type="text" id="uname" name="uname" required style="min-width: 200px;" >
         <span id="uname_error" class="error"></span>
 
         <label for="Item">Item:</label>
-        <input type="text" id="Item" name="Item" required style="min-width: 200px;">
-        <span id="Item" class="error"></span>
+                <select id="Item" name="Item" required style="min-width: 200px;">
+                    <!-- Asset models will be populated here -->
+                </select>
+                <span id="Item" class="error"></span>   
 
         <label for="item_quantity">Quantity:</label>
-            <input type="number" id="item_quantity" name="item_quantity" min="1" required style="min-width: 200px;">
+            <input type="number" id="item_quantity" name="item_quantity" min="1" required style="min-width: 200px;" value="1">
             <span id="item_quantity_error" class="error"></span>
 
        
 
         
-        </form>
+      
     </div>
- </div>
-
+    </form>
+</div>
+    
 
  
     
    
 </body>
-</html>
+</HTml:5>
