@@ -1,10 +1,10 @@
 <?php
 // Establish a connection to the MySQL database
 $dbhost = 'localhost';
-$dbuser = 'root'; // Replace with your actual database username
+$dbuser = 'roots'; // Replace with your actual database username
 $dbpass = ''; // Replace with your actual database password
 
-$dbname = 'plexus'; // Replace with your actual database name
+$dbname = 'plexussss'; // Replace with your actual database name
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
