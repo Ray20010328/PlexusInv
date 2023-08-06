@@ -14,12 +14,11 @@ if ($conn->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $emailAddress = $_POST['email_address'];
-    $username = $_POST['username_account'];
-    $password = $_POST['confirm_Password'];
-    $userSite = $_POST['user_Site'];
-    $phoneNumber = $_POST['phone_Number'];
+    $email_address = $_POST['emailAddress'];
+    $username_account = $_POST['username'];
+    $confirm_Password = $_POST['password'];
+    $user_Site = $_POST['userSite'];
+    $phone_Number = $_POST['phoneNumber'];
 
     // Check if the serial number already exists in the table
     $sql = "SELECT * FROM loginacct WHERE email_address = 'emailAddress'";
