@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Plexus Inventory</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Login Page css -->
+    <link rel="stylesheet" href="css/loginPage.css">
+   <script>
+    function validate() 
+    {
+        var inputValue = document.getElementById("username11").value;
+        //do checking here however you like (regex, iteration, etc.)
+        var regexPattern = /^[a-zA-Z.-]+$/;
+        if(regexPattern.test(inputValue))
+        {
+            alert("UserName is Valid, Welcome to Inventory System!");
+            window.location.replace("main.html");
+            return true;
+
+        }
+ 
+        else
+
+        {
+            alert("Enter a Valid UserName");
+
+            return false;
+
+        }
+    }
+   </script>
+  
+</head>
+<body>
+    
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo">
+                                    <a href="main.html"><img src="images/plexusimage.png" alt="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                            <div class="limit-box">
+                                <nav class="main-menu">
+                                    <ul class="menu-area-main">
+                                        <li> <a href="main.html">Home</a> </li>
+                                        <li> <a href="Deploy.html">Deploy</a> </li>
+                                        <li><a href="Receive.html">Receive</a></li>
+                                        <li><a href="ViewRecord.html">View Record</a></li>
+                                        <li><a href="Alert.html">Alert</a></li>
+                                        <li class="last">
+                                            <a href="login.html">Login / Register</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+    </header>
+    
+    <div class="container_login">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="login">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <form action="main.html">
+                            <input type="text" class="login__input" placeholder="Email Address" id="emailAddress">
+                            <input type="text" class="login__input" placeholder="User name" id="username">   
+                            <input type="password" class="login__input" placeholder="Password" id="firstPassword">
+                            <input type="confirm_Password" class="login__input" placeholder="confirm_Password">
+                            <p><br></p>
+                            <select id="siteUser" name="siteUser">
+                                <option value="">-- Select Site --</option>
+                                <option value="ATC">ATC</option>
+                                <option value="Hillside">Hillside</option>
+                                <option value="Riverside">Riverside</option>
+                                <option value="RVE">Riverside East</option>
+                                <option value="Islandview">IslandView</option>               
+                                <option value="Sea">Seaside</option>
+                            
+                
+                            </select>
+                            <input type="text" class="login__input" placeholder="Phone Number">
+                            <button type="submit" onclick="validate()">Register Account</button>	                    
+                        </form>
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        
+                    </div>
+                        		
+                </form>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>		
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>		
+        </div>
+    </div>
+    
+</body>
+</html>
