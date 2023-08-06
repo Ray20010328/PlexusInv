@@ -44,33 +44,15 @@ echo "Connected successfully";
 
     // Check if the query was successful
     if ($conn->query($sql) === TRUE) {
-        // If the deployment type is "Receive," add the quantity to the assetstotal table
-        if ($deploymentType === "Receive") {
-            $sql = "INSERT INTO assetstotal (asset_model, quantity, site)
-                    VALUES ('$item', $itemQuantity, '$site')
-                    ON DUPLICATE KEY UPDATE quantity = quantity + VALUES(quantity)";
-        } else if ($deploymentType === "Deploy") {
-            // If the deployment type is "Deploy," subtract the quantity from the assetstotal table
-            $sql = "UPDATE assetstotal 
-                    SET quantity = quantity - $itemQuantity 
-                    WHERE asset_model = '$item' AND site = '$site'";
-        }
-
-        if ($conn->query($sql) === TRUE) {
-            header("Location: receive.html?message=success");
-            exit();
-        } else {
-            header("Location: receive.html?message=failed");
-            exit();
-        }
+        header("Location: deploy.html?message=success");
+        exit();
     } else {
-        header("Location: receive.html?message=failed");
+        header("Location: deploy.html?message=failed");
         exit();
     }
-
-
 
     // Close the connection
     $conn->close();
 }
 ?>
+
