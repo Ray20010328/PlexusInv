@@ -82,7 +82,7 @@
                                         <li > <a href="Deploy.html">Deploy</a> </li>
                                         <li ><a href="Receive.html">Receive</a></li>
                                         <li class="active"><a href="ViewRecord.php">View Record</a></li>
-                                        <li><a href="Alert.html">Alert</a></li>
+                                        <li><a href="alert.php">Alert</a></li>
                                         <li class="last">
                                             <a href="login.html">Login</a>
                                         </li>
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                   
+                    
                 </div>
             </div>
         </div>
