@@ -24,7 +24,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #d0d0d0; /* Change this to your desired background color */
         }
 
         h1 {
@@ -35,7 +34,6 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #ccc;
-            background-color: #d0d0d0;
         }
 
         th, td {
@@ -97,24 +95,21 @@
         </div>
         <!-- end header -->
     </header>
-    <div  >
-    <h1 style="padding-top: 15px; "><b>View Records</b></h1>
+    <div class="div-1">
+    <h1>View Records</h1>
     <input type="text" id="filterInput" placeholder="Filter by any attribute">
    
     <table id="dataTable">
-    <thead>
-                <tr>
-                    <th onclick="sortTable(0)">Staff Name</th>
-                    <th onclick="sortTable(1)">Date</th>
-                    <th onclick="sortTable(2)">Site</th>
-                    <th onclick="sortTable(3)">Type</th>
-                    <th onclick="sortTable(4)">User Name</th>
-                    <th onclick="sortTable(5)">Item</th>
-                    <th onclick="sortTable(6)">Quantity</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-        <tbody>
+        <tr>
+            <th>Staff Name</th>
+            <th>Date</th>
+            <th>Site</th>
+            <th>Type</th>
+            <th>User Name</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
         <?php
         // Database connection details
         $servername = "localhost";
@@ -155,7 +150,6 @@
         // Close the connection
         $conn->close();
         ?>
-        </tbody>
     </table>
    
     </div>
@@ -210,66 +204,12 @@
             }
         }
 
-     // Sorting function
-     function sortTable(columnIndex) {
-            var table, rows, switching, i, x, y, shouldSwitch, direction, switchCount = 0;
-            table = document.getElementById("dataTable");
-            switching = true;
-            // Set the sorting direction to ascending
-            direction = "asc";
-
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("td")[columnIndex];
-                    y = rows[i + 1].getElementsByTagName("td")[columnIndex];
-                    if (direction === "asc") {
-                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    } else if (direction === "desc") {
-                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
-                            break;
-                        }
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                    switchCount++;
-                } else {
-                    if (switchCount === 0 && direction === "asc") {
-                        direction = "desc";
-                        switching = true;
-                    }
-                }
-            }
-        }
 
         
     </script>
 
 
 <style>
-
-
-th {
-            cursor: pointer;
-        }
-
-        th.sort-asc::after {
-            content: "\25b2";
-            margin-left: 5px;
-        }
-
-        th.sort-desc::after {
-            content: "\25bc";
-            margin-left: 5px;
-        }
         /* Additional style for Delete button */
         .delete-btn {
             background-color: #e74c3c;

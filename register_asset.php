@@ -1,10 +1,11 @@
 <?php
 // Establish a connection to the MySQL database
 $dbhost = 'localhost';
-$dbuser = 'root'; // Replace with your actual database username
+$dbuser = 'roots'; // Replace with your actual database username
 $dbpass = ''; // Replace with your actual database password
 
 $dbname = 'plexus'; // Replace with your actual database name
+
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
@@ -40,31 +41,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        
-    } 
-
-
-    else {
-        // Serial number doesn't exist, perform an insert
+    } else {
         $sql = "INSERT INTO assets (serial_number, asset_category, asset_model, asset_description,
                 asset_quantity, asset_location, asset_receive_date, asset_warranty_date)
                 VALUES ('$serialNumber', '$assetCategory', '$assetModel', '$assetDescription',
                 '$assetQuantity', '$assetLocation', '$assetReceiveDate', '$assetWarrantyDate')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Asset updated successfully.";
+            echo "Asset registered successfully.";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        
     }
 }
 
 // Close the database connection
 $conn->close();
 ?>
-
-<a href="register.html">
-  <button>Click Me</button>
-</a>
-

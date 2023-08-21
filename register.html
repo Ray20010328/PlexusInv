@@ -134,18 +134,7 @@
             background-color: #c0392b;
         }
 
-        .scan-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .scan-button img {
-            height: 24px;
-            width: 24px;
-            margin-right: 10px;
-        }
+       
 
         .note {
             color: #777;
@@ -228,25 +217,6 @@
                 }
             }
             
-            
-            if (assetCategory === "2D Scanner") {
-                var monitorOptions = [
-                    "MJ 2020",
-                    "1950",
-
-                    "Other",
-
-                ];
-
-                // Add options to the "Brand" dropdown
-                for (var i = 0; i < monitorOptions.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = monitorOptions[i];
-                    option.value = monitorOptions[i];
-                    assetModelSelect.appendChild(option);
-                }
-            }
-
             if (assetCategory === "Monitor") {
                 var monitorOptions = [
                     "HP P22 G5",
@@ -346,7 +316,7 @@
             <label for="asset_location">Asset Location:</label>
             <select id="asset_location" name="asset_location" onchange="updateAssetModels()" required>
                 <option value="">-- Select Location --</option>
-                <option value="RIV">Riverside/ATC</option>
+                <option value="Riverside">Riverside/ATC</option>
                 <option value="RVE">Riverside East</option>
                 <option value="ISL">Island View</option>
                 <option value="HIL">Hillside</option>
@@ -365,11 +335,8 @@
 
          
 
-            <div class="scan-button">
-                <img src="scanner.png" alt="Scan Barcode">
-                <button type="button" onclick="scanBarcode()">Scan Barcode</button>
+            <div class="">
             </div>
-            <input type="hidden" id="barcode_value" name="barcode_value">
 
             <button type="submit">Register</button>
         </form>
